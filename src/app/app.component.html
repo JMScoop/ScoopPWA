@@ -2,7 +2,7 @@
   <h1>JMScoop</h1>
 </div>
 
-<div class="row">
+<div class="row" *ngIf="auth.authenticated()">
   <div class="col-xs-5 col-md-2">
     <a href="http://www.myhealthvectors.com/assets/img/person.png" class="thumbnail">
       <img src="http://www.myhealthvectors.com/assets/img/person.png">
@@ -16,18 +16,16 @@
 </div>
 </div>
 
-<ul class="nav nav-pills nav-stacked">
+<ul class="nav nav-pills nav-stacked" *ngIf="auth.authenticated()">
   <li role="presentation"><a href="#">I'm Driving! </a></li>
   <li role="presentation"><a routerLink="/ineedaride" routerLinkActive="active">I need a ride!</a></li>
   <li role="presentation"><a href="#">My Carpools</a></li>
   <li role="presentation"><a href="#">Messages</a></li>
-  <li role="presentation"><a href="#">Settings<i class="fa fa-cog" aria-hidden="true"></i></a></li>
-
-
-  <li class="navbar-header">
-  <button class="btn btn-primary btn-margin" (click)="auth.login()" *ngIf="!auth.authenticated()">Log In</button>
-  <button class="btn btn-primary btn-margin" (click)="auth.logout()" *ngIf="auth.authenticated()">Log Out</button>
-</li>
+  <li role="presentation"><a href="#">Settings</a></li>
+  <li><button class="btn btn-primary" (click)="auth.login()" *ngIf="!auth.authenticated()">Log In</button>
+  </li>
+  <li><button class="btn btn-primary" (click)="auth.logout()" *ngIf="auth.authenticated()">Log Out</button></li>
 
 </ul>
+
 <router-outlet></router-outlet>

@@ -9,6 +9,7 @@ import { provideAuth, AuthHttp, AuthConfig } from 'angular2-jwt';
 
 import { AppComponent } from './app.component';
 import { IneedarideComponent }  from './pages/Ineedaride/Ineedaride.component';
+import { MycarpoolsComponent } from './pages/mycarpools/mycarpools.component';
 
 import { Auth } from './services/auth.service';
 
@@ -33,7 +34,7 @@ export function authHttpServiceFactory(http: Http, options: RequestOptions) {
     HttpModule,
     NgbModule.forRoot(),
     RouterModule.forRoot([
-      { path: '', component: AppComponent},
+      { path: '', component: AppComponent}, 
       { path: 'ineedaride', component: IneedarideComponent },
     ])
   ],
