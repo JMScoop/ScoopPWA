@@ -1,34 +1,23 @@
-<div class="page-header">
-  <h1>JMScoop</h1>
-</div>
-
-<div class="row" *ngIf="auth.authenticated()">
-  <div class="col-xs-5 col-md-2">
-    <a href="http://www.myhealthvectors.com/assets/img/person.png" class="thumbnail">
-      <img src="http://www.myhealthvectors.com/assets/img/person.png">
-    </a>
-	</div>
-  <div class="panel panel-default">
-  <div class="panel-body">
-    <h4>Welcome back User123!</h4>
-    Profile Information Goes here.
+<nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <a class="navbar-brand" href="#">JMScoop</a>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/login" routerLinkActive="active">Login</a>
+      </li>
+      <li class="nav-item" *ngIf="auth.authenticated()">
+        <a class="nav-link" routerLink="/ineedaride" routerLinkActive="active">Find a Ride</a>
+      </li>
+      <li class="nav-item" *ngIf="auth.authenticated()">
+        <a class="nav-link" routerLink="/postaride" routerLinkActive="active">Post a Ride</a>
+      </li>
+      <li class="nav-item" *ngIf="auth.authenticated()">
+        <a class="nav-link" routerLink="/mycarpools" routerLinkActive="active">My Carpools</a>
+      </li>
+    </ul>
   </div>
-</div>
-</div>
-
-<ul class="nav nav-pills nav-stacked">
-  <li><button class="btn btn-primary" (click)="auth.login()" *ngIf="!auth.authenticated()">Log In</button></li>
-
-</ul>
-
-<ul class="nav nav-pills nav-stacked" *ngIf="auth.authenticated()">
-  <li role="presentation"><a href="#">I'm Driving! </a></li>
-  <li role="presentation"><a routerLink="/ineedaride" routerLinkActive="active">I need a ride!</a></li>
-  <li role="presentation"><a href="#">My Carpools</a></li>
-  <li role="presentation"><a href="#">Messages</a></li>
-  <li role="presentation"><a href="#">Settings</a></li>
-  <li><button class="btn btn-primary" (click)="auth.logout()" *ngIf="auth.authenticated()">Log Out</button></li>
-
-</ul>
-
-<router-outlet></router-outlet>
+  <router-outlet></router-outlet>
+</nav>
