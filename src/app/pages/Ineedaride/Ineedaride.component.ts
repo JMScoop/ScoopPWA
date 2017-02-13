@@ -1,24 +1,30 @@
 import { Component } from '@angular/core';
+import { NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
 
+const now = new Date();
 
 @Component({
-  template: `
-
-    <div class="row">
-  <div class="col">
-    <div ngbDropdown class="d-inline-block">
-      <button class="btn btn-outline-primary" id="dropdownMenu1" ngbDropdownToggle>Times</button>
-      <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
-        <button class="dropdown-item">9:00</button>
-        <button class="dropdown-item">9:05</button>
-        <button class="dropdown-item">9:10</button>
-      </div>
-    </div>
-  </div>
-`
+  templateUrl: `./Ineedaride.component.html`
 
 })
 
 export class IneedarideComponent { 
+
+public isCollapsed = false;
+
+  model: NgbDateStruct;
+  date: {year: number, month: number};
+
+  selectToday() {
+    this.model = {year: now.getFullYear(), month: now.getMonth() + 1, day: now.getDate()};
+
+}
+
+time = {hour: 13, minute: 30};
+  meridian = true;
+
+  toggleMeridian() {
+      this.meridian = !this.meridian;
+  }
 
 }

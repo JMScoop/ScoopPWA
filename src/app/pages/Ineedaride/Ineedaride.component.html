@@ -1,0 +1,29 @@
+<p>
+  <button type="button" class="btn btn-outline-primary" (click)="isCollapsed = !isCollapsed"
+          [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample">
+    Enter Search Criteria
+  </button> <button type="button" class="btn btn-outline-primary">Search</button>
+</p>
+
+<div id="collapseExample" [ngbCollapse]="!isCollapsed">
+<div class="card">
+  <div class="card-block">
+  	<h1>Search for a ride</h1>
+    <ngb-datepicker #dp [(ngModel)]="model" (navigate)="date = $event.next"></ngb-datepicker>
+
+<hr/>
+
+<button class="btn btn-sm btn-outline-primary" (click)="selectToday()">Select Today</button>
+<button class="btn btn-sm btn-outline-primary" (click)="dp.navigateTo()">To current month</button>
+
+<hr/>
+
+<h4>Departure Timeframe</h4>
+<ngb-timepicker [(ngModel)]="time" [meridian]="meridian"></ngb-timepicker>
+<ngb-timepicker [(ngModel)]="time" [meridian]="meridian"></ngb-timepicker>
+
+ </div>
+</div>
+</div>
+
+
