@@ -1,14 +1,14 @@
 <p>
   <button type="button" class="btn btn-outline-primary" (click)="isCollapsed = !isCollapsed"
           [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample">
-    Time and Date
+    Enter Search Criteria
   </button> 
 </p>
 
 <div id="collapseExample" [ngbCollapse]="!isCollapsed">
 <div class="card">
   <div class="card-block">
-  	<h1>Time and Date</h1>
+    <h1>Search for a ride</h1>
     <ngb-datepicker #dp [(ngModel)]="model" (navigate)="date = $event.next"></ngb-datepicker>
 
 <hr/>
@@ -20,11 +20,9 @@
 
 <h4>Departure Timeframe</h4>
 <ngb-timepicker [(ngModel)]="time" [meridian]="meridian"></ngb-timepicker>
-<ngb-timepicker [(ngModel)]="time" [meridian]="meridian"></ngb-timepicker>
+<ngb-timepicker [(ngModel)]="time1" [meridian]="meridian"></ngb-timepicker>
 
  </div>
-
-
 </div>
 </div>
 
