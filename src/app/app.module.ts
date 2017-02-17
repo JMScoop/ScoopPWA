@@ -4,14 +4,13 @@ import { RouterModule }   from '@angular/router';
 import { Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { HttpModule, Http, RequestOptions } from '@angular/http';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { provideAuth, AuthHttp, AuthConfig } from 'angular2-jwt';
 
 
 import { AppComponent } from './app.component';
 import { IneedarideComponent }  from './pages/Ineedaride/Ineedaride.component';
 import { MycarpoolsComponent } from './pages/mycarpools/mycarpools.component';
-import { LoginComponent } from './pages/login/login.component';
 import { PostarideComponent } from './pages/Postaride/postaride.component';
 
 import { Auth } from './services/auth.service';
@@ -30,7 +29,6 @@ export function authHttpServiceFactory(http: Http, options: RequestOptions) {
   declarations: [
     AppComponent,
     IneedarideComponent,
-    LoginComponent,
     MycarpoolsComponent,
     PostarideComponent
   ],
@@ -41,7 +39,6 @@ export function authHttpServiceFactory(http: Http, options: RequestOptions) {
     NgbModule.forRoot(),
     RouterModule.forRoot([ 
       { path: 'ineedaride', component: IneedarideComponent },
-      { path: 'login', component: LoginComponent },
       { path: 'mycarpools', component: MycarpoolsComponent },
       { path: 'postaride', component: PostarideComponent },
     ]),
