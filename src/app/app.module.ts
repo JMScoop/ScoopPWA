@@ -14,6 +14,7 @@ import { MycarpoolsComponent } from './pages/mycarpools/mycarpools.component';
 import { PostarideComponent } from './pages/Postaride/postaride.component';
 
 import { Auth } from './services/auth.service';
+import { Api  } from './services/api.service';
 
 // import { AUTH_PROVIDERS }      from 'angular2-jwt';
 
@@ -37,19 +38,20 @@ export function authHttpServiceFactory(http: Http, options: RequestOptions) {
     FormsModule,
     HttpModule,
     NgbModule.forRoot(),
-    RouterModule.forRoot([ 
+    RouterModule.forRoot([
       { path: 'ineedaride', component: IneedarideComponent },
       { path: 'mycarpools', component: MycarpoolsComponent },
       { path: 'postaride', component: PostarideComponent },
     ]),
   ],
-  providers: [    
+  providers: [
     {
       provide: AuthHttp,
       useFactory: authHttpServiceFactory,
       deps: [ Http, RequestOptions ]
-    }, 
-    Auth
+    },
+    Auth,
+    Api
      /*AUTH_PROVIDERS*/],
   bootstrap: [AppComponent]
 })
