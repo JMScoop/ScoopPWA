@@ -21,7 +21,7 @@ public isCollapsed = false;
 
 }
 
-time = {hour: 13, minute: 30};
+  time = {hour: 13, minute: 30};
   meridian = true;
 
   time1 = {hour: 13, minute: 30};

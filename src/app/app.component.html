@@ -9,9 +9,6 @@
         <a class="nav-link" (click)="auth.login()">Login</a>
       </li>
       <li class="nav-item" *ngIf="auth.authenticated()">
-        <a class="nav-link" (click)="auth.logout()">Logout</a>
-      </li>
-      <li class="nav-item" *ngIf="auth.authenticated()">
         <a class="nav-link" routerLink="/ineedaride" routerLinkActive="active">Find a Ride</a>
       </li>
       <li class="nav-item" *ngIf="auth.authenticated()">
@@ -19,6 +16,9 @@
       </li>
       <li class="nav-item" *ngIf="auth.authenticated()">
         <a class="nav-link" routerLink="/mycarpools" routerLinkActive="active">My Carpools</a>
+      </li>
+      <li class="nav-item" *ngIf="auth.authenticated()">
+        <a class="nav-link" (click)="auth.logout()">Logout</a>
       </li>
     </ul>
   </div>

@@ -4,61 +4,45 @@
           [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample">
     Enter Search Criteria
   </button>
+  <button type="button" class="btn btn-success">Search</button>
 </div>
 </div>
 
 <div id="collapseExample" [ngbCollapse]="!isCollapsed">
 <div class="card">
   <div class="card-block">
+
+    <div ngbDropdown class="d-inline-block">
+      <button class="btn btn-outline-primary" id="dropdownMenu1" ngbDropdownToggle>Leaving from</button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
+        <button class="dropdown-item">Sunchase</button>
+        <button class="dropdown-item">Copper</button>
+        <button class="dropdown-item">all the rest...</button>
+      </div>
+      <div ngbDropdown class="d-inline-block">
+      <button class="btn btn-outline-primary" id="dropdownMenu1" ngbDropdownToggle>Going To</button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
+        <button class="dropdown-item">Sunchase</button>
+        <button class="dropdown-item">Copper</button>
+        <button class="dropdown-item">all the rest...</button>
+      </div>
+    </div>
+ </div>
+
+<hr/>
+
   	<h4>Departure Date</h4>
     <ngb-datepicker #dp [(ngModel)]="model" (navigate)="date = $event.next"></ngb-datepicker>
 
 <hr/>
-
-<!-- <button class="btn btn-sm btn-outline-primary" (click)="selectToday()">Select Today</button>
-<button class="btn btn-sm btn-outline-primary" (click)="dp.navigateTo()">To current month</button> -->
 
 <h4>Departure Timeframe</h4>
 <ngb-timepicker [(ngModel)]="time" [meridian]="meridian" ></ngb-timepicker>
 <ngb-timepicker [(ngModel)]="time1" [meridian]="meridian"></ngb-timepicker>
 
 
-<hr/>
-
-<div class="row">
-  <div class="col">
-    <div ngbDropdown class="d-inline-block">
-      <button class="btn btn-outline-primary" id="dropdownMenu1" ngbDropdownToggle>Leaving from</button>
-      <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
-        <input type="checkbox" class="dropdown-item"> Copper Beech
-        <input type="checkbox" class="dropdown-item"> Sunchase
-        <input type="checkbox" class="dropdown-item"> Charleston Townes
-        <input type="checkbox" class="dropdown-item"> Stonegate
-        <input type="checkbox" class="dropdown-item"> Southview
-        <input type="checkbox" class="dropdown-item"> The Harrison
-      </div>
-      <div ngbDropdown class="d-inline-block">
-      <button class="btn btn-outline-primary" id="dropdownMenu1" ngbDropdownToggle>Going To</button>
-      <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
-        <input type="checkbox" class="dropdown-item"> The Quad
-        <input type="checkbox" class="dropdown-item"> East Campus
-        <input type="checkbox" class="dropdown-item"> Lakeside
-        <input type="checkbox" class="dropdown-item"> Stonegate
-        <input type="checkbox" class="dropdown-item"> Southview
-        <input type="checkbox" class="dropdown-item"> The Harrison
-      </div>
-    </div>
-  </div>
-  </div>
-
- </div>
 </div>
 </div>
-
-<div class="card">
-  <div class="card-block">
-  	<button type="button" class="btn btn-outline-primary">Search</button>
-  </div>
 </div>
 
 
