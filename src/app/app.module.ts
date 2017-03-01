@@ -12,6 +12,7 @@ import { AppComponent } from './app.component';
 import { IneedarideComponent }  from './pages/Ineedaride/Ineedaride.component';
 import { MycarpoolsComponent } from './pages/mycarpools/mycarpools.component';
 import { PostarideComponent } from './pages/Postaride/postaride.component';
+import { RideComponent } from './pages/ride/ride.component';
 
 import { Auth } from './services/auth.service';
 
@@ -30,7 +31,8 @@ export function authHttpServiceFactory(http: Http, options: RequestOptions) {
     AppComponent,
     IneedarideComponent,
     MycarpoolsComponent,
-    PostarideComponent
+    PostarideComponent,
+    RideComponent
   ],
   imports: [
     BrowserModule,
@@ -41,6 +43,7 @@ export function authHttpServiceFactory(http: Http, options: RequestOptions) {
       { path: 'ineedaride', component: IneedarideComponent },
       { path: 'mycarpools', component: MycarpoolsComponent },
       { path: 'postaride', component: PostarideComponent },
+      { path: 'ride', component: RideComponent },
     ]),
   ],
   providers: [    
