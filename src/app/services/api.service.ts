@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Http, Response, Headers } from '@angular/http';
 import { Observable } from 'rxjs/Rx';
 import { Auth } from './auth.service';
+import { environment as env } from '../../environments/environment';
 
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
@@ -12,7 +13,7 @@ export class Api {
   private api_url: string;
 
   constructor(private auth: Auth, private http: Http) {
-    this.api_url = 'https://api.jmuscoop.com/';
+    this.api_url = env.api_url;
   }
 
   // create a function to get data from our API
