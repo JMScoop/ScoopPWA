@@ -4,7 +4,8 @@ import { NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
 const now = new Date();
 
 @Component({
-  templateUrl: `./postaride.component.html`
+  templateUrl: `./postaride.component.html`,
+  styleUrls: ['./postaride.component.css']
 
 })
 
