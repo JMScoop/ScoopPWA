@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
 import { Api } from '../../services/api.service';
+import { Ride } from '../../models/ride';
 
 const now = new Date();
 
@@ -13,11 +14,12 @@ const now = new Date();
 export class IneedarideComponent {
 
   public isCollapsed = false;
-  public message: string = "default";
+  public rides: Ride[] = [];
 
   constructor(private api: Api) {
-    this.api.get().subscribe(res => {
-      this.message = res.message;
+    this.api.get('rides').subscribe(res => {
+      this.rides = res.rides;
+      console.log(this.rides);
     });
   }
 

@@ -1,18 +1,6 @@
 <div class="card text-center">
-
   <div class="card-block">
-  <button type="button" class="btn btn-outline-primary" (click)="isCollapsed = !isCollapsed"
-          [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample">
-    Enter Search Criteria
-  </button>
-  <button type="button" class="btn btn-success">Search</button>
-</div>
-</div>
-
-<div id="collapseExample" [ngbCollapse]="!isCollapsed">
-<div class="card text-center">
-  <div class="card-block">
-
+    <h2>Enter Your Ride information</h2>
     <div ngbDropdown class="d-inline-block">
       <button class="btn btn-outline-primary" id="dropdownMenu1" ngbDropdownToggle>Leaving from</button>
       <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
@@ -30,135 +18,27 @@
     </div>
  </div>
 <hr/>
-  <div class="form-group">
-    <label for="usr">Payment request:</label>
-    <input type="text" class="form-control" id="usr">
-  </div>
-  <div class="form-group">
-    <label for="usr">Meeting Place:</label>
-    <input type="text" class="form-control" id="usr">
-  </div>
-  <div class="form-group">
-    <label for="usr">Notes:</label>
-    <input type="text" class="form-control" id="usr">
-  </div>
-
-
-
-
-<hr/>
 
     <h4>Departure Date</h4>
     <ngb-datepicker #dp [(ngModel)]="model" (navigate)="date = $event.next"></ngb-datepicker>
 
 <hr/>
 
-<h4>Departure Timeframe</h4>
+<h4>Departure Time</h4>
 <ngb-timepicker [(ngModel)]="time" [meridian]="meridian" ></ngb-timepicker>
-<ngb-timepicker [(ngModel)]="time1" [meridian]="meridian"></ngb-timepicker>
-
-
-</div>
-</div>
-</div>
-
-
-<!-- <p>
-  <button type="button" class="btn btn-outline-primary" (click)="isCollapsed = !isCollapsed"
-          [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample">
-    Enter Search Criteria
-  </button> 
-</p>
-
-<div id="collapseExample" [ngbCollapse]="!isCollapsed">
-<div class="card">
-  <div class="card-block">
-    <h1>Search for a ride</h1>
-    <ngb-datepicker #dp [(ngModel)]="model" (navigate)="date = $event.next"></ngb-datepicker>
 
 <hr/>
 
-<button class="btn btn-sm btn-outline-primary" (click)="selectToday()">Select Today</button>
-<button class="btn btn-sm btn-outline-primary" (click)="dp.navigateTo()">To current month</button>
-
-<hr/>
-
-<h4>Departure Timeframe</h4>
-<ngb-timepicker [(ngModel)]="time" [meridian]="meridian"></ngb-timepicker>
-<ngb-timepicker [(ngModel)]="time1" [meridian]="meridian"></ngb-timepicker>
-
- </div>
-</div>
+<div class="form-group">
+    <label for="usr">Payment request (optional):</label>
+    <input type="text" class="form-control">
+  </div>
+  <div class="form-group">
+    <label for="usr">Additional Notes About Your Ride:</label>
+    <input type="text" class="form-control">
+  </div>
 </div>
 
-
-<div class="row">
-  <div class="col">
-    <div ngbDropdown class="d-inline-block">
-      <button class="btn btn-outline-primary" id="dropdownMenu1" ngbDropdownToggle>Leaving from</button>
-      <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
-        <button class="dropdown-item">Sunchase</button>
-        <button class="dropdown-item">Copper</button>
-        <button class="dropdown-item">all the rest...</button>
-      </div>
-    </div>
-  </div>
-  </div>
-
-<br>
-
-  <div class="row">
-  <div class="col">
-    <div ngbDropdown class="d-inline-block">
-      <button class="btn btn-outline-primary" id="dropdownMenu2" ngbDropdownToggle>Destination</button>
-      <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-        <button class="dropdown-item">Festival</button>
-        <button class="dropdown-item">R1</button>
-        <button class="dropdown-item">R7</button>
-      </div>
-    </div>
-  </div>
-  </div>
-
-<br>
-
-  <div class="row">
-  <div class="col">
-    <div ngbDropdown class="d-inline-block">
-      <button class="btn btn-outline-primary" id="dropdownMenu3" ngbDropdownToggle>Seats</button>
-      <div class="dropdown-menu" aria-labelledby="dropdownMenu3">
-        <button class="dropdown-item">1</button>
-        <button class="dropdown-item">2</button>
-        <button class="dropdown-item">4</button>
-        <button class="dropdown-item">5</button>
-        <button class="dropdown-item">6</button>
-        <button class="dropdown-item"> </button>
-      </div>
-    </div>
-  </div>
-
-
-  <div class="form-group">
-    <label for="usr">Car Info</label>
-    <input type="text" class="form-control" id="usr">
-  </div>
-
-<br><br/>
-
-  <div class="form-group">
-    <label for="usr">Payment request</label>
-    <input type="text" class="form-control" id="usr">
-  </div>
-
-<br><br/>
-
-  <div class="form-group">
-    <label for="usr">Notes</label>
-    <input type="text" class="form-control" id="usr">
-  </div>
-
-
-<br><br/>
+<button type="button" class="btn btn-success">Submit</button>
 </div>
-<button type="button" class="btn btn-outline-primary">Search</button>
- -->
+
