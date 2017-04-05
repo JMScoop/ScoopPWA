@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
-import { Http, Response, Headers } from '@angular/http';
+import { Http, Response, Headers, RequestOptions } from '@angular/http';
 import { Observable } from 'rxjs/Rx';
 import { Auth } from './auth.service';
+import { Ride } from '../models/ride';
 import { environment as env } from '../../environments/environment';
 
 import 'rxjs/add/operator/map';
@@ -35,4 +36,21 @@ export class Api {
       // NOT logged in
     }
   }
+//   postRide(): Observable<Ride[]> {
+//     //is this person logged in?
+//     if(this.auth.authenticated()) {
+//       // get the JWT
+//       let token = localStorage.getItem('id_token');
+
+//       // set the Authorization and Content-Type headers
+//       let headers = new Headers({ 'Content-Type': 'application/json' });
+//       headers.set('Authorization', `Bearer ${token}`);
+
+//       return this.http.post(this.api_url)
+//                       .map((res: Response): any => res.json())
+//                       .catch((error: any) => Observable.throw(error.json().error || 'Server error'));
+// } else {
+//       // NOT logged in
+//     }
+//   }
 }

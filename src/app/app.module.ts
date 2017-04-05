@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule }   from '@angular/router';
 import { Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
-import { HttpModule, Http, RequestOptions } from '@angular/http';
+import { HttpModule, Http, RequestOptions, JsonpModule } from '@angular/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { provideAuth, AuthHttp, AuthConfig } from 'angular2-jwt';
 
@@ -16,7 +16,9 @@ import { RideComponent } from './pages/ride/ride.component';
 
 import { Auth } from './services/auth.service';
 import { Api  } from './services/api.service';
-
+import { RideService } from './services/ride.service';
+import { EmitterService } from './services/emitter.service';
+ 
 // import { AUTH_PROVIDERS }      from 'angular2-jwt';
 
 // import { routing, appRoutingProviders } from './app.routes';
@@ -39,6 +41,7 @@ export function authHttpServiceFactory(http: Http, options: RequestOptions) {
     BrowserModule,
     FormsModule,
     HttpModule,
+    JsonpModule,
     NgbModule.forRoot(),
     RouterModule.forRoot([
       { path: 'ineedaride', component: IneedarideComponent },
@@ -54,7 +57,9 @@ export function authHttpServiceFactory(http: Http, options: RequestOptions) {
       deps: [ Http, RequestOptions ]
     },
     Auth,
-    Api
+    Api,
+    EmitterService,
+    RideService
      /*AUTH_PROVIDERS*/],
   bootstrap: [AppComponent]
 })
