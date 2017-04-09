@@ -6,6 +6,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule, Http, RequestOptions, JsonpModule } from '@angular/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { provideAuth, AuthHttp, AuthConfig } from 'angular2-jwt';
+// import { BootstrapFormGeneratorModule } from 'ng-bootstrap-form-generator';
 
 
 import { AppComponent } from './app.component';
@@ -40,6 +41,7 @@ export function authHttpServiceFactory(http: Http, options: RequestOptions) {
   imports: [
     BrowserModule,
     FormsModule,
+    // BootstrapFormGeneratorModule,
     HttpModule,
     JsonpModule,
     NgbModule.forRoot(),

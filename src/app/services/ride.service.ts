@@ -12,7 +12,7 @@ export class RideService {
      // Resolve HTTP using the constructor
      constructor (private http: Http) {}
      // private instance variable to hold base url
-     private ridesUrl = 'http://my.scoop.com:8080/notes'; 
+     private ridesUrl = 'http://my.scoop.com:8080/rides'; 
 
      // Fetch all existing rides
      getRides() : Observable<Ride[]> {

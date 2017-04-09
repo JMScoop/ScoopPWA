@@ -1,11 +1,12 @@
 import { Component, EventEmitter, Input, OnChanges } from '@angular/core';
 import { NgForm }    from '@angular/forms';
 import { Observable } from 'rxjs/Rx';
-
 import { RideService } from 'app/services/ride.service';
 import { EmitterService } from 'app/services/emitter.service';
 import { Ride } from '../../models/ride';
-
+import { Passengers } from '../../models/ride';
+import { Driver } from '../../models/ride';
+import { Car } from '../../models/ride';
 
 // const now = new Date();
 
@@ -22,7 +23,7 @@ export class PostarideComponent implements OnChanges{
         private rideService: RideService
         ){}
     // Local properties
-    private model = new Ride(new Date(), '', '');
+    private model = new Ride(new Date(), '', '', '', Number(), new Passengers('',''), new Driver('','', new Car(Number(), '')));
     private editing = false;
 
     // Input properties
@@ -47,7 +48,7 @@ export class PostarideComponent implements OnChanges{
                                     // Emit list event
                                     EmitterService.get(this.listId).emit(rides);
                                     // Empty model
-                                    this.model = new Ride(new Date(), '', '');
+                                    this.model = new Ride(new Date(), '', '', '', Number(), new Passengers('',''), new Driver('','', new Car(Number(), '')));
                                     // Switch editing status
                                     if(this.editing) this.editing = !this.editing;
                                 }, 

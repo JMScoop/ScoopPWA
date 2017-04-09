@@ -42,18 +42,30 @@
 <button type="button" class="btn btn-success">Submit</button>
 </div> -->
 
-<form (ngSubmit)="submitRide()">
-            <div class="form-group">
-                <div class="input-group">
-                    <span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-user"></span></span>
-                    <input type="text" class="form-control" placeholder="Author" [(ngModel)]="model.author" name="author">
-                </div>
-                <br />
-                <textarea class="form-control" rows="3" placeholder="Text" [(ngModel)]="model.text" name="text"></textarea>
-                <br />
-                <button *ngIf="!editing" type="submit" class="btn btn-primary btn-block">Add</button>
-                <button *ngIf="editing" type="submit" class="btn btn-warning btn-block">Update</button>
-            </div>
-</form>
+<div class="card text-center">
+  <div class="card-block">
+    <h2>Enter Your Ride Information</h2>
+      <form (ngSubmit)="submitRide()">
+                              Ride Departure Date:
+                          <!-- <input type="date" class="form-control" placeholder="Leaving" [(ngModel)]="model.departs" name="departs">
+                          <br /> -->
+                              Ride Departure Time:
+                          <input type="time" class="form-control" placeholder="Time" [(ngModel)]="model.time" name="departs">
+                          <br />
+                              Leaving From:
+                          <input type="text" class="form-control" placeholder="Origin" [(ngModel)]="model.origin" name="origin">
+                          <br />
+                              Going To:
+                          <input type="text" class="form-control" placeholder="Destination" [(ngModel)]="model.destination" name="destination">
+                          <br />
+                              Additional Ride Information:
+                          <input type="text" class="form-control" placeholder="notes" [(ngModel)]="model.notes" name="notes">
+                          <br />
 
+                      <br />
+                      <button *ngIf="!editing" type="submit" class="btn btn-primary btn-block">Add</button>
+                      <!-- <button *ngIf="editing" type="submit" class="btn btn-warning btn-block">Update</button> -->
+      </form>
+    </div>
+ </div>
 
