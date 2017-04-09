@@ -16,7 +16,7 @@ import { Car } from '../../models/ride';
   providers: [RideService]
 })
 
-export class PostarideComponent implements OnChanges{ 
+export class PostarideComponent implements OnChanges{
 
 
    constructor(
@@ -25,6 +25,8 @@ export class PostarideComponent implements OnChanges{
     // Local properties
     private model = new Ride(new Date(), '', '', '', Number(), new Passengers('',''), new Driver('','', new Car(Number(), '')));
     private editing = false;
+    private depart_date: any;
+    private depart_time: any;
 
     // Input properties
      @Input() editId: string;
@@ -33,6 +35,12 @@ export class PostarideComponent implements OnChanges{
     submitRide(){
         // Variable to hold a reference of addRide/updateRide
         let rideOperation:Observable<Ride[]>;
+
+        console.log(this.depart_date);
+        console.log(this.depart_time);
+        this.model.departs = new Date(this.depart_date + 'T' + this.depart_time);
+        console.log(this.model);
+        // return;
 
         if(!this.editing){
             // Create a new comment
@@ -51,7 +59,7 @@ export class PostarideComponent implements OnChanges{
                                     this.model = new Ride(new Date(), '', '', '', Number(), new Passengers('',''), new Driver('','', new Car(Number(), '')));
                                     // Switch editing status
                                     if(this.editing) this.editing = !this.editing;
-                                }, 
+                                },
                                 err => {
                                     // Log errors if any
                                     console.log(err);
@@ -67,7 +75,7 @@ export class PostarideComponent implements OnChanges{
         });
     }
 
-    
+
 //   model: NgbDateStruct;
 //   date: {year: number, month: number};
 
