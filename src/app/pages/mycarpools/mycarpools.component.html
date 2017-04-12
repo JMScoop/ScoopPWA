@@ -1,4 +1,18 @@
-<div class="card text-center">
+<div *ngIf="!rides.length">
+  There are no rides available.
+</div>
+<div *ngIf="rides.length">
+  <div *ngFor="let ride of rides" class="card text-center">
+    <div class="card-block">
+      <h4 class="card-title">Your Ride to {{ride.destination}}</h4>
+      <p class="card-text"> Ride {{ride.origin}} to {{ride.destination}}</p>
+      <p class="card-text"></p>
+      <a class="nav-link btn btn-primary" routerLink="/ride?{{ride._id}}" routerLinkActive="active">View Carpool</a>
+    </div>
+  </div>
+</div>
+
+<!-- <div class="card text-center">
   <div class="card-block">
     <h4 class="card-title">Your Ride to East Campus</h4>
     <span class="badge badge-pill badge-info">New Passenger Request</span>
@@ -32,6 +46,6 @@
     <p class="card-text">2/11/2017</p>
     <a class="nav-link btn btn-primary" routerLink="/ride" routerLinkActive="active">View Carpool</a>
   </div>
-</div>
+</div> -->
 
 <router-outlet></router-outlet>
