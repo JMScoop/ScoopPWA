@@ -1,0 +1,54 @@
+<div class="card text-center">
+  <div class="card-block">
+  	<h4 class="card-title">Andrew's Ride</h4>
+    <p class="card-text">From Copper Beech to Campus: The Quad</p>
+    <p class="card-text">10:30 4/21/2017</p>
+    <p class="card-text">Seats Available: <b>3</b></p>
+    <button type="button" class="btn btn-link">View Driver Profile</button>
+    <a class="nav-link btn btn-primary" (click)="open(content)">Join Carpool</a>
+  </div>
+</div>
+<div class="card text-center">
+  <div class="card-block">
+    <h4 class="card-title">Matt's Ride</h4>
+    <p class="card-text">From Copper Beech to Campus: The Quad</p>
+    <p class="card-text">10:45 AM 4/21/2017</p>
+    <p class="card-text">Seats Available: <b>2</b></p>
+    <button type="button" class="btn btn-link" routerLink="/mattprofile">View Driver Profile</button>
+    <a class="nav-link btn btn-primary" (click)="open(content)">Join Carpool</a>
+  </div>
+</div>
+<div class="card text-center">
+  <div class="card-block">
+    <h4 class="card-title">Emma's Ride</h4>
+    <p class="card-text">From Copper Beech to Campus: The Quad</p>
+    <p class="card-text">10:50 AM 4/21/2017</p>
+    <p class="card-text">Seats Available: <b>1</b></p>
+    <button type="button" class="btn btn-link">View Driver Profile</button>
+    <a class="nav-link btn btn-primary" (click)="open(content)">Join Carpool</a>
+  </div>
+</div>
+
+
+<div class="card text-center">
+  <div class="card-block">
+    <button type="button" class="btn btn-success" routerLink="/ineedaride">Search Again</button>
+  </div>
+</div>
+
+<!-- Confirmation Modal -->
+<template #content let-c="close" let-d="dismiss" ngbModalContainer>
+  <div class="modal-header">
+    <h4 class="modal-title">Matt's Ride</h4>
+    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <p>Are you sure you want to join this carpool?</p>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-primary" (click)="c('Close click')">Yes!</button>
+    <button type="button" class="btn btn-secondary" (click)="c('Close click')">Cancel</button>
+  </div>
+</template>

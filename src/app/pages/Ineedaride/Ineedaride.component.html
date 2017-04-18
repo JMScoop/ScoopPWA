@@ -1,6 +1,3 @@
-<p>
-  {{message}}
-</p>
 <div class="card text-center">
 
   <div class="card-block">
@@ -8,30 +5,24 @@
           [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample">
     Enter Search Criteria
   </button>
-  <button type="button" class="btn btn-success">Search</button>
+  <button type="button" class="btn btn-success" routerLink="/searchresults">Search</button>
 </div>
 </div>
 
 <div id="collapseExample" [ngbCollapse]="!isCollapsed">
 <div class="card text-center">
   <div class="card-block">
+      Leaving From:
+      <select class="form-control" placeholder="Origin" name="origin">
+         <option *ngFor="let l of locations" [value]="l.value">{{l.display}}</option>
+      </select>
+    
+    <br />
+    Going To:
+    <select class="form-control" placeholder="Destination" name="destination">
+         <option *ngFor="let l of locations" [value]="l.value">{{l.display}}</option>
+    </select>
 
-    <div ngbDropdown class="d-inline-block">
-      <button class="btn btn-outline-primary" id="dropdownMenu1" ngbDropdownToggle>Leaving from</button>
-      <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
-        <button class="dropdown-item">Sunchase</button>
-        <button class="dropdown-item">Copper</button>
-        <button class="dropdown-item">all the rest...</button>
-      </div>
-      <div ngbDropdown class="d-inline-block">
-      <button class="btn btn-outline-primary" id="dropdownMenu1" ngbDropdownToggle>Going To</button>
-      <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
-        <button class="dropdown-item">Sunchase</button>
-        <button class="dropdown-item">Copper</button>
-        <button class="dropdown-item">all the rest...</button>
-      </div>
-    </div>
- </div>
 
 <hr/>
 
