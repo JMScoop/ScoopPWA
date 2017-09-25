@@ -1,77 +1,34 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { RouterModule }   from '@angular/router';
-import { Routes } from '@angular/router';
-import { FormsModule } from '@angular/forms';
-import { SelectModule } from 'angular2-select';
-import { HttpModule, Http, RequestOptions, JsonpModule } from '@angular/http';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { provideAuth, AuthHttp, AuthConfig } from 'angular2-jwt';
+import { ErrorHandler, NgModule } from '@angular/core';
+import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 
+import { MyApp } from './app.component';
+import { HomePage } from '../pages/home/home';
+import { ListPage } from '../pages/list/list';
 
-import { AppComponent } from './app.component';
-import { IneedarideComponent }  from './pages/Ineedaride/Ineedaride.component';
-import { MycarpoolsComponent } from './pages/mycarpools/mycarpools.component';
-import { PostarideComponent } from './pages/Postaride/postaride.component';
-import { RideComponent } from './pages/ride/ride.component';
-import { ProfileComponent } from './pages/profile/profile.component';
-import { SearchResultsComponent } from './pages/searchresults/searchresults.component';
-import { MattProfileComponent } from './pages/mattprofile/mattprofile.component';
-
-import { Auth } from './services/auth.service';
-import { Api  } from './services/api.service';
-import { RideService } from './services/ride.service';
-import { EmitterService } from './services/emitter.service';
- 
-// import { AUTH_PROVIDERS }      from 'angular2-jwt';
-
-// import { routing, appRoutingProviders } from './app.routes';
-
-// import { HomeComponent }       from './home.component';
-
-export function authHttpServiceFactory(http: Http, options: RequestOptions) {
-  return new AuthHttp( new AuthConfig({}), http, options);
-}
+import { StatusBar } from '@ionic-native/status-bar';
+import { SplashScreen } from '@ionic-native/splash-screen';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    IneedarideComponent,
-    MycarpoolsComponent,
-    PostarideComponent,
-    RideComponent,
-    ProfileComponent,
-    SearchResultsComponent,
-    MattProfileComponent
+    MyApp,
+    HomePage,
+    ListPage
   ],
   imports: [
     BrowserModule,
-    FormsModule,
-    SelectModule,
-    HttpModule,
-    JsonpModule,
-    NgbModule.forRoot(),
-    RouterModule.forRoot([
-      { path: 'ineedaride', component: IneedarideComponent },
-      { path: 'mycarpools', component: MycarpoolsComponent },
-      { path: 'postaride', component: PostarideComponent },
-      { path: 'ride', component: RideComponent },
-      { path: 'profile', component: ProfileComponent },
-      { path: 'searchresults', component: SearchResultsComponent},
-      { path: 'mattprofile', component: MattProfileComponent}
-    ]),
+    IonicModule.forRoot(MyApp),
+  ],
+  bootstrap: [IonicApp],
+  entryComponents: [
+    MyApp,
+    HomePage,
+    ListPage
   ],
   providers: [
-    {
-      provide: AuthHttp,
-      useFactory: authHttpServiceFactory,
-      deps: [ Http, RequestOptions ]
-    },
-    Auth,
-    Api,
-    EmitterService,
-    RideService
-     /*AUTH_PROVIDERS*/],
-  bootstrap: [AppComponent]
+    StatusBar,
+    SplashScreen,
+    {provide: ErrorHandler, useClass: IonicErrorHandler}
+  ]
 })
-export class AppModule { }
+export class AppModule {}

@@ -1,32 +1,26 @@
-# HelloMobile
+This is a starter template for [Ionic](http://ionicframework.com/docs/) projects.
 
-This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.24.
+## How to use this template
 
-## Development server
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+*This template does not work on its own*. The shared files for each starter are found in the [ionic2-app-base repo](https://github.com/ionic-team/ionic2-app-base).
 
-## Code scaffolding
+To use this template, either create a new ionic project using the ionic node.js utility, or copy the files from this repository into the [Starter App Base](https://github.com/ionic-team/ionic2-app-base).
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive/pipe/service/class/module`.
+### With the Ionic CLI:
 
-## Build
+Take the name after `ionic2-starter-`, and that is the name of the template to be used when using the `ionic start` command below:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+```bash
+$ sudo npm install -g ionic cordova
+$ ionic start mySideMenu sidemenu
+```
 
-## Running unit tests
+Then, to run it, cd into `mySideMenu` and run:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```bash
+$ ionic cordova platform add ios
+$ ionic cordova run ios
+```
 
-## Running end-to-end tests
+Substitute ios for android if not on a Mac.
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
-
-## Deploying to Github Pages
-
-Run `ng github-pages:deploy` to deploy to Github Pages.
-
-## Further help
-
-To get more help on the `angular-cli` use `ng help` or go check out the [Angular-CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
-# ScoopPWA
