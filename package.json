@@ -25,6 +25,7 @@
     "@angular2-material/core": "^2.0.0-alpha.8-2",
     "@angular2-material/toolbar": "^2.0.0-alpha.8-2",
     "@ng-bootstrap/ng-bootstrap": "^1.0.0-alpha.19",
+    "@types/node": "^6.0.88",
     "angular": "^1.6.1",
     "angular-route": "^1.6.1",
     "angular2-jwt": "^0.1.28",
@@ -39,10 +40,10 @@
     "zone.js": "^0.7.2"
   },
   "devDependencies": {
+    "@angular/cli": "^1.4.1",
     "@angular/compiler-cli": "^2.3.1",
     "@types/jasmine": "2.5.38",
     "@types/node": "^6.0.42",
-    "angular-cli": "1.0.0-beta.24",
     "codelyzer": "~2.0.0-beta.1",
     "jasmine-core": "2.5.2",
     "jasmine-spec-reporter": "2.5.0",
