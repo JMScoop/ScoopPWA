@@ -7,7 +7,7 @@ import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import { IneedaridePage } from '../pages/ineedaride/ineedaride';
 import { ProfilePage } from '../pages/profile/profile';
-import { MycarpoolsPage } from '../pages/mycarpools/mycarpools';
+import { MyCarpoolsPage } from '../pages/my-carpools/my-carpools';
 
 @Component({
   templateUrl: 'app.html'
@@ -28,7 +28,7 @@ export class MyApp {
       { title: 'List', component: ListPage },
       { title: 'I Need A Ride', component: IneedaridePage },
       { title: 'Profile', component: ProfilePage },
-      { title: 'My Carpools', component: MycarpoolsPage },
+      { title: 'My Carpools', component: MyCarpoolsPage },
     ];
 
   }

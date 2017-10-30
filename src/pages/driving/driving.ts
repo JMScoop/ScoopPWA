@@ -1,24 +1,25 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 /**
- * Generated class for the MycarpoolsPage page.
+ * Generated class for the DrivingPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
 
+@IonicPage()
 @Component({
-  selector: 'page-mycarpools',
-  templateUrl: 'mycarpools.html',
+  selector: 'page-driving',
+  templateUrl: 'driving.html',
 })
-export class MycarpoolsPage {
+export class DrivingPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad MycarpoolsPage');
+    console.log('ionViewDidLoad DrivingPage');
   }
 
 }

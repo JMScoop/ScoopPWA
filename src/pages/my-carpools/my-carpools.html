@@ -1,0 +1,14 @@
+<ion-header>
+
+  <ion-navbar>
+  	<button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>My Carpools</ion-title>
+  </ion-navbar>
+
+</ion-header>
+<ion-tabs>
+    <ion-tab [root]="drivingRoot" tabTitle="Driving" tabIcon="car"></ion-tab>
+    <ion-tab [root]="ridingRoot" tabTitle="Riding" tabIcon="thumbs-up"></ion-tab>
+</ion-tabs>
