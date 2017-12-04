@@ -11,6 +11,8 @@ import { MyCarpoolsPage } from '../pages/my-carpools/my-carpools';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { AuthServiceProvider } from '../providers/auth-service/auth-service';
+import { FeathersProvider } from '../providers/feathers/feathers';
+import { RideProvider } from '../providers/ride/ride';
 
 @NgModule({
   declarations: [
@@ -36,7 +38,9 @@ import { AuthServiceProvider } from '../providers/auth-service/auth-service';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    AuthServiceProvider
+    AuthServiceProvider,
+    FeathersProvider,
+    RideProvider
   ]
 })
 export class AppModule {}

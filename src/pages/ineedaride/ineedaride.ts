@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Ride } from '../../models/ride';
+import { RideProvider } from '../../providers/ride/ride';
+
 
 /**
  * Generated class for the IneedaridePage page.
@@ -17,6 +20,8 @@ export class IneedaridePage {
 	 comingFrom: string;
 	 goingTo: string;
 
+   rides: Ride[];
+
 	 public buttonClicked: boolean = false; //Whatever you want to initialise it as
 
     public onButtonClick() {
@@ -24,8 +29,19 @@ export class IneedaridePage {
         this.buttonClicked = !this.buttonClicked;
     }
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    public rideProvider: RideProvider
+  ) {
+    rideProvider.getRides({}).subscribe(
+      (result:Ride[]) => {
+        this.rides = result;
+      }
+    );
   }
+
+
   stpSelect() {
     console.log('STP selected');
   }
