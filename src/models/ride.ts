@@ -10,5 +10,5 @@ export class Ride {
 		public passengers: Person[],
 		public driver: Person
 	){}
-
+	
 }
