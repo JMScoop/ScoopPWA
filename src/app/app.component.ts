@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { Nav, Platform } from 'ionic-angular';
+import { Nav, Platform, Events } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
@@ -21,13 +21,23 @@ export class MyApp {
 
   pages: Array<{title: string, component: any}>;
 
+  private isAuthenticated: Boolean = false;
+
   constructor(
     public platform: Platform,
     public statusBar: StatusBar,
     public splashScreen: SplashScreen,
-    public auth: AuthServiceProvider
+    public auth: AuthServiceProvider,
+    public events: Events
   ) {
     this.initializeApp();
+
+    this.events.subscribe('user:logged_in', () => {
+      this.isAuthenticated = true;
+    });
+    this.events.subscribe('user:logged_out', () => {
+      this.isAuthenticated = false;
+    });
 
     // used for an example of ngFor and navigation
     this.pages = [
@@ -42,9 +52,6 @@ export class MyApp {
 
   initializeApp() {
     this.platform.ready().then(() => {
-      // handle authentication
-      this.auth.handleAuthentication();
-
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
       this.statusBar.styleDefault();
