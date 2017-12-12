@@ -21,7 +21,7 @@ export class SearchresultsPage {
   }
 
   ionViewDidLoad() {
-    this.rp.getRides().subscribe(
+    this.rp.getRides({}).subscribe(
     	(r:Ride[]) => {
     		this.rides = r;
     	}
