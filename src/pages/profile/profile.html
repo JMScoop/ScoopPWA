@@ -17,16 +17,17 @@
 
 
 <ion-content padding>
-	<ion-card>
-  <img src="{{user.picture}}"/>
+	<ion-card class="card">
+  <img src="{{user.picture}}" class="profilePicture"/>
   <ion-card-content>
-    <ion-card-title>
+    <ion-card-title class="name">
       {{user.user_metadata.given_name}} {{user.user_metadata.family_name}}
       </ion-card-title>
-    <p>
-      {{user.user_metadata.car.description}}
-
-      {{user.user_metadata.car.seats}}
+    <p class="paragraph">
+      <b>Type of Car:</b> {{user.user_metadata.car.description}}
+    </p>
+    <p class="paragraph">
+      <b>Number of Seats:</b> {{user.user_metadata.car.seats}}
     </p>
   </ion-card-content>
 </ion-card>

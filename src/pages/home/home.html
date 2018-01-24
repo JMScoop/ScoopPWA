@@ -8,19 +8,17 @@
 </ion-header>
 
 <ion-content padding>
-  <h3 class="title">JMUScoop</h3>
 
-  <button *ngIf="!isAuthenticated" ion-button (click)="auth.login()">Login</button>
-  <button *ngIf="isAuthenticated" ion-button (click)="auth.logout()">Logout</button>
+  <button *ngIf="!isAuthenticated" ion-button (click)="auth.login()" class="button">Login</button>
+  <button *ngIf="isAuthenticated" ion-button (click)="auth.logout()" class="button">Logout</button>
+  <h3 class="title">JMUScoop</h3>
   <img src="../../assets/icon/logo.ico" class="image">
 
   <p class="p">
     Welcome to JMUScoop: a ride sharing application for students at JMU.
   </p>
   <p class="p">
-    Please login to start your JMUScoop experience.
+    Please login in the top right to start your JMUScoop experience.
   </p>
-
-   <button ion-button (click)="auth.login()" class="button">Login</button>
 
 </ion-content>
