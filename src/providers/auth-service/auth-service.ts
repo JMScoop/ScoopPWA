@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Events } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
-import * as auth0 from 'auth0-js';
+//import * as auth0 from 'auth0-js';
 import Auth0Lock from 'auth0-lock';
 
 @Injectable()

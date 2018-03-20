@@ -10,6 +10,7 @@ import { SearchresultsPage } from '../pages/searchresults/searchresults';
 import { IneedaridePage } from '../pages/ineedaride/ineedaride';
 import { ProfilePage } from '../pages/profile/profile';
 import { MyCarpoolsPage } from '../pages/my-carpools/my-carpools';
+import { PostARidePage } from '../pages/post-a-ride/post-a-ride';
 
 @Component({
   templateUrl: 'app.html'
@@ -45,7 +46,8 @@ export class MyApp {
       { title: 'Profile', component: ProfilePage },
       { title: 'I Need A Ride', component: IneedaridePage },
       { title: 'My Carpools', component: MyCarpoolsPage },
-      { title: 'Search Results', component: SearchresultsPage }
+      { title: 'Search Results', component: SearchresultsPage },
+      {title: 'Post A Ride', component: PostARidePage }
     ];
 
   }

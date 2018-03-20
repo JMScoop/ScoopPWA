@@ -1,0 +1,103 @@
+<ion-header>
+
+  <ion-navbar>
+  	<button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Post a Ride</ion-title>
+  </ion-navbar>
+
+</ion-header>
+<ion-content padding>
+<ion-list>
+    <ion-item>
+      <ion-label>Start Date</ion-label>
+      <ion-datetime displayFormat="MMM DD YYYY"></ion-datetime>
+    </ion-item>
+
+
+    <ion-item>
+      <ion-label>Leaving Time</ion-label>
+      <ion-datetime displayFormat="h:mm A" pickerFormat="h mm A"></ion-datetime>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Leaving From</ion-label>
+      <ion-select [(ngModel)]="leavingFrom" interface="popover">
+        <ion-option value="Sunchase Apartments">Sunchase Apartments</ion-option>
+        <ion-option value="Charleston Townes">Charleston Townes</ion-option>
+        <ion-option value="Copper Beech">Copper Beech</ion-option>
+        <ion-option value="The Hills: Stonegate">The Hiils: Stonegate</ion-option>
+        <ion-option value="The Harrison">The Harrison</ion-option>
+        <ion-option value="Forest Hills Manor LLC">Forest Hills Manor LLC</ion-option>
+        <ion-option value="Forest Hills LLC">Forest Hills LLC</ion-option>
+        <ion-option value="Urban Exchange">Urban Exchange</ion-option>
+        <ion-option value="Downtown">Downtown</ion-option>
+        <ion-option value="Pheasant Run">Pheasant Run</ion-option>
+        <ion-option value="Aspen Heights">Aspen Heights</ion-option>
+        <ion-option value="Foxhill Townes">Foxhill Townes</ion-option>
+        <ion-option value="865">865</ion-option>
+        <ion-option value="North 38">North 38</ion-option>
+        <ion-option value="Hunters Ridge">Hunters Ridge</ion-option>
+        <ion-option value="The Mill">The Mill</ion-option>
+        <ion-option value="Campus View Apartments">Campus View Apartments</ion-option>
+        <ion-option value="The Retreat">The Retreat</ion-option>
+        <ion-option value="Squire Hill">Squire Hill</ion-option>
+        <ion-option value="Campus: The Quad">Campus: The Quad</ion-option>
+        <ion-option value="Campus: Lakeside">Campus: Lakeside</ion-option>
+        <ion-option value="Campus: East Campus">Campus: East Campus</ion-option>
+        <ion-option value="Campus: Memorial Hall">Campus: Memorial Hall</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Going to</ion-label>
+      <ion-select [(ngModel)]="goingTo" interface="popover">
+        <ion-option value="Sunchase Apartments">Sunchase Apartments</ion-option>
+        <ion-option value="Charleston Townes">Charleston Townes</ion-option>
+        <ion-option value="Copper Beech">Copper Beech</ion-option>
+        <ion-option value="The Hills: Stonegate">The Hiils: Stonegate</ion-option>
+        <ion-option value="The Harrison">The Harrison</ion-option>
+        <ion-option value="Forest Hills Manor LLC">Forest Hills Manor LLC</ion-option>
+        <ion-option value="Forest Hills LLC">Forest Hills LLC</ion-option>
+        <ion-option value="Urban Exchange">Urban Exchange</ion-option>
+        <ion-option value="Downtown">Downtown</ion-option>
+        <ion-option value="Pheasant Run">Pheasant Run</ion-option>
+        <ion-option value="Aspen Heights">Aspen Heights</ion-option>
+        <ion-option value="Foxhill Townes">Foxhill Townes</ion-option>
+        <ion-option value="865">865</ion-option>
+        <ion-option value="North 38">North 38</ion-option>
+        <ion-option value="Hunters Ridge">Hunters Ridge</ion-option>
+        <ion-option value="The Mill">The Mill</ion-option>
+        <ion-option value="Campus View Apartments">Campus View Apartments</ion-option>
+        <ion-option value="The Retreat">The Retreat</ion-option>
+        <ion-option value="Squire Hill">Squire Hill</ion-option>
+        <ion-option value="Campus: The Quad">Campus: The Quad</ion-option>
+        <ion-option value="Campus: Lakeside">Campus: Lakeside</ion-option>
+        <ion-option value="Campus: East Campus">Campus: East Campus</ion-option>
+        <ion-option value="Campus: Memorial Hall">Campus: Memorial Hall</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+    	<ion-label>Seats Available</ion-label>
+    	<ion-select>[(ngModel)]="seatsAvailable" interface="popover">
+    		<ion-option value="1">1</ion-option>
+    		<ion-option value="2">2</ion-option>
+    		<ion-option value="3">3</ion-option>
+    		<ion-option value="4">4</ion-option>
+    		<ion-option value="5">5</ion-option>
+    		<ion-option value="6">6</ion-option>
+    		<ion-option value="7">7</ion-option>
+    	</ion-select>
+    </ion-item>
+
+  <ion-item>
+    <ion-label stacked>Other Information</ion-label>
+    <ion-input type="text"></ion-input>
+  </ion-item>
+  <button ion-button>Post!</button>
+
+</ion-list>
+
+</ion-content>

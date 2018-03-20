@@ -14,6 +14,7 @@ import { RideProvider } from '../providers/ride/ride';
 import { IneedaridePage } from '../pages/ineedaride/ineedaride';
 import { ProfilePage } from '../pages/profile/profile';
 import { MyCarpoolsPage } from '../pages/my-carpools/my-carpools';
+import { PostARidePage } from '../pages/post-a-ride/post-a-ride';
 
 import { AuthServiceProvider } from '../providers/auth-service/auth-service';
 import { FeathersProvider } from '../providers/feathers/feathers';
@@ -25,7 +26,8 @@ import { FeathersProvider } from '../providers/feathers/feathers';
     SearchresultsPage,
     IneedaridePage,
     ProfilePage,
-    MyCarpoolsPage
+    MyCarpoolsPage,
+    PostARidePage
   ],
   imports: [
     BrowserModule,
@@ -39,7 +41,8 @@ import { FeathersProvider } from '../providers/feathers/feathers';
     SearchresultsPage,
     IneedaridePage,
     ProfilePage,
-    MyCarpoolsPage
+    MyCarpoolsPage,
+    PostARidePage
   ],
   providers: [
     StatusBar,
