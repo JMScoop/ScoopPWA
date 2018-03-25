@@ -8,6 +8,7 @@ import * as io from 'socket.io-client';
 import * as hooks from 'feathers-hooks';
 import * as socketio from 'feathers-socketio/client';
 // import * as authentication from 'feathers-authentication-client';
+// import { ENV } from '@app/env';
 @Injectable()
 export class FeathersProvider {
 
@@ -15,7 +16,7 @@ export class FeathersProvider {
   private _socket: any;
 
   constructor() {
-    this._socket = io('http://api.jmuscoop.test');
+    this._socket = io(`https://api.jmuscoop.test`);
     this._feathers = feathers();
     this._feathers.configure(hooks());
     this._feathers.configure(feathersRx({idField: '_id'}));
