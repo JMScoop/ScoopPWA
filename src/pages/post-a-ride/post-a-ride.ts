@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
 import { Validators, FormBuilder, FormGroup, ValidatorFn, AbstractControl } from '@angular/forms';
 import * as moment from 'moment';
-
+import { Car } from '../../models/car'
+import { Ride } from '../../models/ride'
+import { Person } from '../../models/person'
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 import { RideProvider } from '../../providers/ride/ride';
@@ -87,7 +89,7 @@ export class PostARidePage {
     this.rideProvider.postRide(newRide).subscribe(
       (res: any) => {
         // result from calling postRide comes back and
-        if (err) {
+        if (Error) {
           // handle the error
         }
         // otherwise
