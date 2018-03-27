@@ -21,4 +21,8 @@ export class RideProvider {
               query: query
            });
   }
+
+  postRide(ride: Ride): any {
+    return this.feathers.service('rides').create(ride);
+  }
 }
