@@ -16,7 +16,7 @@ export class AuthServiceProvider {
     let options = {
       auth: {
         params: {
-          scope: 'openid name nickname email user_metadata app_metadata picture'
+          scope: 'openid profile email user_metadata'
         }
       }
     };

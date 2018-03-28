@@ -17,7 +17,19 @@
 
 
 <ion-content padding>
-<ion-card ion-card color="primary">
+
+  <ion-card *ngFor="let ride of rides" color="primary">
+    <ion-card-header>
+      Your ride from {{ ride.origin }} to {{ ride.destination }} on {{ ride.departs }}
+    </ion-card-header>
+    <ion-card-content>
+      <p *ngIf="!ride.passengers.length">There are no riders yet.</p>
+      <ul>
+        <li *ngFor="let rider of ride.passengers">{{ rider.first_name }} {{ rider.last_name }}</li>
+      </ul>
+    </ion-card-content>
+  </ion-card>
+<!-- <ion-card ion-card color="primary">
 
   <ion-card-header>
     Your ride from Copper Beech to Campus: East Campus on 10/31/2017 at 9:30 AM:  </ion-card-header>
@@ -41,5 +53,5 @@
   </ion-card-content>
 
 </ion-card>
-
+ -->
 </ion-content>
