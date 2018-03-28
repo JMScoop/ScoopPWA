@@ -45,9 +45,9 @@ export class MyApp {
       { title: 'Home', component: HomePage },
       { title: 'Profile', component: ProfilePage },
       { title: 'I Need A Ride', component: IneedaridePage },
-      { title: 'My Carpools', component: MyCarpoolsPage },
       { title: 'Search Results', component: SearchresultsPage },
-      {title: 'Post A Ride', component: PostARidePage }
+      { title: 'Post A Ride', component: PostARidePage },
+      { title: 'My Carpools', component: MyCarpoolsPage }
     ];
 
   }
