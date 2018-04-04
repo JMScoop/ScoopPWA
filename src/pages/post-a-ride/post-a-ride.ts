@@ -97,8 +97,8 @@ export class PostARidePage {
         // }
         // otherwise
         // navigate to the next page... my-carpools?
-        // this.navCtrl.push(MyCarpoolsPage);
-        console.log(res);
+        this.navCtrl.push(MyCarpoolsPage);
+        // console.log(res);
       },
       (err: any) => {
         console.log("ERROR: ", err);

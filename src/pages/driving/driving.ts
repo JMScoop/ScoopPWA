@@ -20,7 +20,10 @@ export class DrivingPage {
   private rides: Ride[];
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private rp: RideProvider) {
-    rp.getRides({
+  }
+
+  ionViewDidLoad() {
+    this.rp.getRides({
       // EXAMPLE of what the query might look like...
       // query: {
       //   driver: {
@@ -32,10 +35,6 @@ export class DrivingPage {
         this.rides = myRides.data;
       }
     );
-  }
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad DrivingPage');
   }
 
 }

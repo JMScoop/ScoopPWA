@@ -33,6 +33,12 @@ export class MyApp {
   ) {
     this.initializeApp();
 
+    this.auth.isAuthenticated().then(
+      (isAuth: boolean) => {
+        this.isAuthenticated = isAuth;
+      }
+    );
+
     this.events.subscribe('user:logged_in', () => {
       this.isAuthenticated = true;
     });
