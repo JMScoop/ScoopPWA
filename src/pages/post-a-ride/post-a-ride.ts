@@ -25,6 +25,8 @@ interface RidePost {
 })
 export class PostARidePage {
 
+  mycarpoolspage = MyCarpoolsPage;
+
   private today: moment.Moment = moment();
   private locs = locations;
   private car: Car = new Car(4, "Light Blue Honda CRV");
@@ -97,8 +99,8 @@ export class PostARidePage {
         // }
         // otherwise
         // navigate to the next page... my-carpools?
-        this.navCtrl.push(MyCarpoolsPage);
-        // console.log(res);
+        this.navCtrl.push('MyCarpoolsPage');
+        //console.log(res);
       },
       (err: any) => {
         console.log("ERROR: ", err);

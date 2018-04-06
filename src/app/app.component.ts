@@ -14,6 +14,7 @@ import { PostARidePage } from '../pages/post-a-ride/post-a-ride';
 
 @Component({
   templateUrl: 'app.html'
+  //template: '<ion-nav [root]="rootPage"></ion-nav>'
 })
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
