@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Validators, FormBuilder, FormGroup, ValidatorFn, AbstractControl } from '@angular/forms';
+import { Storage } from '@ionic/storage';
 import * as moment from 'moment';
 import { Car } from '../../models/car'
 import { Ride, locations } from '../../models/ride'
@@ -28,7 +29,7 @@ export class PostARidePage {
   private today: moment.Moment = moment();
   private locs = locations;
   private car: Car = new Car(4, "Light Blue Honda CRV");
-  private user: Person = new Person("Brenna", "Ellison", this.car);
+  private user: any;
 
   // show or hide error message flags
   private showLeavingFromError: boolean = false;
@@ -44,7 +45,8 @@ export class PostARidePage {
     public navCtrl: NavController,
     public navParams: NavParams,
     private fb: FormBuilder,
-    private rideProvider: RideProvider
+    private rideProvider: RideProvider,
+    private storage: Storage
   ) {
   }
 
@@ -54,6 +56,11 @@ export class PostARidePage {
     // use it to set this.ride.seats_available
     //
     // this.ride.seats_available = this.user.car.seats;
+    this.storage.get('user').then(
+      (profile: any) => {
+        this.user = profile;
+      }
+    );
   }
 
   postRide() {
@@ -79,9 +86,11 @@ export class PostARidePage {
       // uh-oh!
     }
 
+    let person = new Person();
+
     // create a new ride object
     let newRide = new Ride(
-      this.user,
+      person,
       departs,
       this.ride.leaving_from,
       this.ride.going_to,

@@ -25,11 +25,9 @@ export class DrivingPage {
   ionViewDidLoad() {
     this.rp.getRides({
       // EXAMPLE of what the query might look like...
-      // query: {
-      //   driver: {
-      //     id: this.user._id
-      //   }
-      // }
+      departs: {
+        $gte: new Date() // i.e. rides departing in the future
+      }
     }).subscribe(
       (myRides: any) => {
         this.rides = myRides.data;

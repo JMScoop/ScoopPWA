@@ -30,6 +30,7 @@ export class AuthServiceProvider {
           console.log(err);
         }
         console.log(profile);
+        this.storage.set('user', profile);
       });
     });
     this.lock.on('authorization_error', err => {
@@ -54,6 +55,7 @@ export class AuthServiceProvider {
     this.storage.remove('access_token');
     this.storage.remove('id_token');
     this.storage.remove('expires_at');
+    this.storage.remove('user');
     this.events.publish('user:logged_out');
   }
 
