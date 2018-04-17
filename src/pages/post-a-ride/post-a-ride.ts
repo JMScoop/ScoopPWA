@@ -59,6 +59,7 @@ export class PostARidePage {
     this.storage.get('user').then(
       (profile: any) => {
         this.user = profile;
+        console.log(this.user);
       }
     );
   }
@@ -86,7 +87,13 @@ export class PostARidePage {
       // uh-oh!
     }
 
-    let person = new Person();
+    let car = new Car( this.user.user_metadata.car.seats, this.user.user_metadata.car.description );
+    let person = new Person(
+      this.user.user_id, 
+      this.user.user_metadata.first_name, 
+      this.user.user_metadata.last_name,
+      car 
+    );
 
     // create a new ride object
     let newRide = new Ride(

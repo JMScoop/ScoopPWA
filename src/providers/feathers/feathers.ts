@@ -16,7 +16,7 @@ export class FeathersProvider {
   private _socket: any;
 
   constructor() {
-    this._socket = io(`https://api.jmuscoop.test`);
+    this._socket = io(`https://api.jmuscoop.com`);
     this._feathers = feathers();
     this._feathers.configure(hooks());
     this._feathers.configure(feathersRx({idField: '_id'}));

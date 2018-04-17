@@ -14,11 +14,16 @@ export class AuthServiceProvider {
     public storage: Storage
   ) {
     let options = {
+      allowShowPassword: true,
       auth: {
         params: {
           scope: 'openid profile email user_metadata'
-        }
-      }
+        },
+        redirect: false,
+        responseType: 'token',
+        sso: true
+      },
+      autoclose: false
     };
     this.lock = new Auth0Lock('TOHt37bTNqIXTo7SdgwPG0pPhkvnyKOq', 'jmscoop.auth0.com', options);
     this.lock.on('authenticated', (authResult) => {
